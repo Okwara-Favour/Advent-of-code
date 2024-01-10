@@ -33,7 +33,7 @@ public class Day6b {
         return y - loc + 1;
     }
     public static void main(String[] args) {
-        String filePath = "Bigtest6b.txt";
+        String filePath = "Bigtest6.txt";
 
         int sum = 0;
         Dictionary<String, ArrayList<Long>> dict = new Hashtable<>();
@@ -43,14 +43,14 @@ public class Day6b {
             while ((line = reader.readLine()) != null) {
                 String[] word_split = {};
                 word_split = line.split(":");
-                dict.put(word_split[0], convertToIntegers(Arrays.asList(word_split[1].trim().split(" +"))));
+                dict.put(word_split[0], convertToIntegers(Arrays.asList(word_split[1].trim().replaceAll(" ", ""))));
             }
         } catch (IOException e) {
             // Handle any exceptions that may occur during file reading
             e.printStackTrace();
         }
 
-        System.out.println(dict);
+        //System.out.println(dict);
         long res = 1;
         ArrayList<String> description = new ArrayList<>();
         Enumeration<String> k = dict.keys();
@@ -60,7 +60,7 @@ public class Day6b {
             
         }
         for(int i=0; i<dict.get(description.get(0)).size(); i++) {
-            System.out.println(no_of_possible_wins(dict.get(description.get(1)).get(i), dict.get(description.get(0)).get(i)));
+            //System.out.println(no_of_possible_wins(dict.get(description.get(1)).get(i), dict.get(description.get(0)).get(i)));
             res *= no_of_possible_wins(dict.get(description.get(1)).get(i), dict.get(description.get(0)).get(i));
         }
         System.out.println(res);

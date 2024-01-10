@@ -108,8 +108,7 @@ public class Day8a {
             // Handle any exceptions that may occur during file reading
             e.printStackTrace();
         }
-
-        System.out.println(dir.getNode());
+        
         System.out.println(countSteps("AAA", dir, sequence));
     }
 }

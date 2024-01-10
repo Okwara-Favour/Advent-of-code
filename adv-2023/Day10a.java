@@ -134,16 +134,13 @@ public class Day10a {
             
             ArrayList<ArrayList<Integer>> temp = new ArrayList<>();
             temp.addAll(path.nextPipeLoc);
-            System.out.print(val + " " + temp.size() + " ");
             path.resetNextPipeLoc();
             for(int i=0; i<temp.size(); i++) {
                 char n = history.getCurrentPipe(temp.get(i).get(0), temp.get(i).get(1));
                 path.modPipe(n, temp.get(i).get(0), temp.get(i).get(1), val);
                 visited = visited + 1;
-                //System.out.print(n);
             }
             path.setFinalVal(visited);
-            System.out.println(visited);
             val = val + 1;
             pathStore = path.nextPipeLoc;
         }
@@ -151,7 +148,7 @@ public class Day10a {
         //traversePipe(path, history, path.nextPipeLoc, val);
     }
     public static void main(String[] args) {
-        String filePath = "Smalltest10e.txt";
+        String filePath = "Bigtest10.txt";
 
         PathFinder path = new PathFinder();
         PathFinder history = new PathFinder();
@@ -184,17 +181,7 @@ public class Day10a {
         path.modPipe('S', startloc[0], startloc[1], 0);
         traversePipe(path, history, path.nextPipeLoc, 1, 1);
 
-        
-        for(int i=0; i<path.getPipes().size(); i++) {
-            System.out.println(path.getPipes().get(i));
-        }
-
         System.out.println(path.finalVal/2);
-
-        /*System.out.println();
-        for(int i=0; i<path.getPipes().size(); i++) {
-            System.out.println(history.getPipes().get(i));
-        }*/
         
     }
 }

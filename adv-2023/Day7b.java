@@ -86,7 +86,7 @@ public class Day7b {
             }
         }
 
-        System.out.print(j + " " + cardArray);
+        
         if(x == 5) {
             return "Five of a kind";
         }
@@ -187,8 +187,6 @@ public class Day7b {
                 //System.out.println(cardType(cardArray));
                 
                 String cname = cardType(cardArray);
-                System.out.print(" " + cname);
-                System.out.println();
                 card.addTypeHandBid(cname, tempArray, Integer.parseInt(word_split[1]));
             }
         } catch (IOException e) {

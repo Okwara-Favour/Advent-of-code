@@ -157,7 +157,6 @@ public class Day7a {
         int x = 1;
         for(int i=type.length-1; i>=0; i--) {
            for(int j=0; j<bidDict.get(type[i]).size(); j++) {
-                System.out.println(x + " " + bidDict.get(type[i]).get(j) + " " + type[i]);
                 res = res + (x * bidDict.get(type[i]).get(j));
                 x++;
            }

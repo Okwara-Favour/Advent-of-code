@@ -447,22 +447,12 @@ public class Day10b {
         path.modPipe('S', startloc[0], startloc[1], 0);
         traversePipe(path, history, path.nextPipeLoc, 1, 1);
 
-        
-        /*for(int i=0; i<path.getPipes().size(); i++) {
-            System.out.println(path.getPipes().get(i));
-        }
-
-        System.out.println(path.finalVal/2);
-        */
         modUnvisited(path, history);
 
         String btn = history.getPipes().get(startloc[0]).replace('S', 'F');
         history.getPipes().set(startloc[0], btn);
         checkInsideLoop(history);
 
-        for(int i=0; i<path.getPipes().size(); i++) {
-            System.out.println(history.getPipes().get(i));
-        }
         System.out.println(countUnvisited(history));
         
     }
